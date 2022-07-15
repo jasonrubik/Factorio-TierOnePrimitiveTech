@@ -1,0 +1,13 @@
+
+Version: 0.1
+  Features:
+    - Initial release.
+
+Some basic changes with technologies hidden and some recipes hidden.
+No settings or in-game options have been implemented yet.
+
+To-Do :  
+
+Add settings menu backend logic
+hide recipes from planner and chest filter UI
+prevent placing of prohibited entities (solar/etc)
