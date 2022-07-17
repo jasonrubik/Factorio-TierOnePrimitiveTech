@@ -7,8 +7,8 @@ Date: 17 July 2022
     - Removed Prod Module 3 recipe from the Prod Module 3 technology
     - Removed Speed Module 3 recipe from the Speed Module 3 technology
     - The Iron Chest recipe is now hidden. This will be controlled via a setting in a future release.
-	- Steel technology has been updated to remove the steel chest recipe from it
-	- Removed Uranium Ammo technology
+    - Steel technology has been updated to remove the steel chest recipe from it
+    - Removed Uranium Ammo technology
   Minor Changes:
     - Updated setting-description text for long handed inserts to indicate "to be crafted" instead of "to be placed"
     - Updated setting-description text for small electric poles to indicate "Iron Sticks" instead of "Sticks"
