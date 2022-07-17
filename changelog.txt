@@ -1,7 +1,8 @@
+---------------------------------------------------------------------------------------------------
 Version: 0.0.2
 Date: 17 July 2022
   Features:
-    - 
+    - No major changes
   Changes:
     - Added kovarex enrichment process tech to the list of explicitly hidden technologies
     - Removed Prod Module 3 recipe from the Prod Module 3 technology
