@@ -1,13 +1,32 @@
-
-Version: 0.1
+Version: 0.0.2
+Date: 17 July 2022
+  Features:
+    - 
+  Changes:
+    - Added kovarex enrichment process tech to the list of explicitly hidden technologies
+    - Removed Prod Module 3 recipe from the Prod Module 3 technology
+    - Removed Speed Module 3 recipe from the Speed Module 3 technology
+    - The Iron Chest recipe is now hidden. This will be controlled via a setting in a future release.
+	- Steel technology has been updated to remove the steel chest recipe from it
+	- Removed Uranium Ammo technology
+  Minor Changes:
+    - Updated setting-description text for long handed inserts to indicate "to be crafted" instead of "to be placed"
+    - Updated setting-description text for small electric poles to indicate "Iron Sticks" instead of "Sticks"
+    - Set "Allow long handed inserter" setting to TRUE by default
+  To-Do:
+    - Hide stack inserter effect from Inserter Capacity Bonus technology
+    - Limit Assembling Machine 2 to only allow recipes that require a fluid input
+    - Hide all laser and energy weapon bonus technologies
+---------------------------------------------------------------------------------------------------
+Version: 0.0.1
+Date: 15 July 2022
   Features:
     - Initial release.
+    - Some basic changes with some technologies hidden and some recipes hidden
+    - No settings or in-game options have been implemented yet
+  To-Do:
+    - Add settings menu backend logic
+    - hide recipes from planner and chest filter UI
+    - prevent placing of prohibited entities (solar/etc)
 
-Some basic changes with technologies hidden and some recipes hidden.
-No settings or in-game options have been implemented yet.
 
-To-Do :  
-
-Add settings menu backend logic
-hide recipes from planner and chest filter UI
-prevent placing of prohibited entities (solar/etc)

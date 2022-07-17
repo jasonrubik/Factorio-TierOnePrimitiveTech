@@ -38,6 +38,8 @@ data.raw.technology["nuclear-fuel-reprocessing"].hidden = true
 data.raw.technology["nuclear-power"].hidden = true
 data.raw.technology["stack-inserter"].hidden = true
 data.raw.technology["uranium-processing"].hidden = true
+data.raw.technology["uranium-ammo"].hidden = true
+data.raw.technology["kovarex-enrichment-process"].hidden = true
 
 
 -- Disable/hide these technologies, but add settings later to optionally allow these in future versions of this mod
@@ -99,13 +101,19 @@ RemovePrerequistesFromTechnology(data.raw.technology["inserter-capacity-bonus-1"
 data.raw.recipe["productivity-module-3"].hidden = true
 data.raw.recipe["speed-module-3"].hidden = true
 data.raw.recipe["steel-chest"].hidden = true
+data.raw.recipe["iron-chest"].hidden = true
+
+RemoveRecipeEffectFromTechnology(data.raw.technology["productivity-module-3"], "productivity-module-3")
+RemoveRecipeEffectFromTechnology(data.raw.technology["speed-module-3"], "speed-module-3")
+
+RemoveRecipeEffectFromTechnology(data.raw.technology["steel-processing"], "steel-chest")
 
 
 
+-- Hide items from planner UI
 
-
-
-
+-- data.raw.item["fast-inserter"].flags = { "hidden" } 
+-- data.raw.item["stack-inserter"].flags = { "hidden" } 
 
 
 
