@@ -20,6 +20,16 @@ function AddPrerequistesToTechnology(technology, prerequisiteToAdd)
 	table.insert(technology.prerequisites, prerequisiteToAdd)
 end
 
+function RemoveIngredientFromRecipe(recipe, ingredientToRemove)
+	for i, ingredient in ipairs(recipe.ingredients) do
+		if ingredient == ingredientToRemove then
+			table.remove(recipe.ingredients, i)
+			break
+		end
+	end
+end
+
+
 
 -- Disable/hide these technologies ALWAYS
 
@@ -49,7 +59,7 @@ data.raw.technology["artillery"].hidden = true
 data.raw.technology["artillery-shell-range-1"].hidden = true
 data.raw.technology["artillery-shell-speed-1"].hidden = true
 data.raw.technology["atomic-bomb"].hidden = true
-data.raw.technology["belt-immunity-equipment"].hidden = true
+-- ALLOWED/not hidden by Default  --   data.raw.technology["belt-immunity-equipment"].hidden = true
 data.raw.technology["coal-liquefaction"].hidden = true
 -- ALLOWED/not hidden by Default  --   data.raw.technology["construction-robotics"].hidden = true
 data.raw.technology["defender"].hidden = true
@@ -108,9 +118,25 @@ RemoveRecipeEffectFromTechnology(data.raw.technology["speed-module-3"], "speed-m
 
 RemoveRecipeEffectFromTechnology(data.raw.technology["steel-processing"], "steel-chest")
 
+data.raw.recipe["logistic-chest-storage"].ingredients =
+{
+      {"wooden-chest", 1},
+      {"electronic-circuit", 3},
+      {"advanced-circuit", 1}
+}
+
+data.raw.recipe["logistic-chest-passive-provider"].ingredients =
+{
+      {"wooden-chest", 1},
+      {"electronic-circuit", 3},
+      {"advanced-circuit", 1}
+}
+
+--RemoveIngredientFromRecipe(data.raw.recipe["logistic-chest-storage"], "steel-chest")
+--RemoveIngredientFromRecipe(data.raw.recipe["logistic-chest-passive-provider"], "steel-chest")
 
 
--- Hide items from planner UI
+-- Hide items from planner UI  -- this generated an error at runtime : 
 
 -- data.raw.item["fast-inserter"].flags = { "hidden" } 
 -- data.raw.item["stack-inserter"].flags = { "hidden" } 
