@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.5
+Date: 19 April 2023
+  Features:
+    - Implemented Settings UI logic to allow for in-game customization of modpack behavior
+  Changes:
+    - Long-Handed Inserter recipe can now be toggled OFF in settings. Default is ON.
+---------------------------------------------------------------------------------------------------
 Version: 0.0.4
 Date: 17 August 2022
   Features:
