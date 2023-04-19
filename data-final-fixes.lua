@@ -52,7 +52,18 @@ data.raw.technology["uranium-ammo"].hidden = true
 data.raw.technology["kovarex-enrichment-process"].hidden = true
 
 
+-- Disable/hide these recipes based on the Settings UI
+
+
+if not settings.startup["TOPT-AllowLongHandedInserter"].value then
+	data.raw.recipe["long-handed-inserter"].hidden = true
+end
+
+
+
 -- Disable/hide these technologies, but add settings later to optionally allow these in future versions of this mod
+
+
 
 
 data.raw.technology["artillery"].hidden = true
