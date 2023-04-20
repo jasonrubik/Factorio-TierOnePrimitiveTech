@@ -87,6 +87,14 @@ if not settings.startup["TOPT-AllowLongHandedInserter"].value then
 	RemoveRecipeEffectFromTechnology(data.raw.technology["automation"], "long-handed-inserter")
 end
 
+if settings.startup["TOPT-UpdateSmallElectricPoleRecipe"].value then
+	data.raw.recipe["small-electric-pole"].ingredients =
+		{
+			{"iron-stick", 2},
+			{"copper-cable", 2}
+		}
+end
+
 if not settings.startup["TOPT-AllowIronChestDefaultRecipe"].value then
 	data.raw.recipe["iron-chest"].hidden = true
 end
@@ -155,7 +163,7 @@ end
 
 
 
--- Update Technologies which depend on optionally disabled technologies
+-- Update Technologies which depend on optionally disabled technologies due to settings
 
 if not data.raw.technology["distractor"].hidden then
 	if data.raw.technology["laser"].hidden then
