@@ -153,7 +153,10 @@ if not settings.startup["TOPT-AllowAtomicBombs"].value then
 	data.raw.technology["atomic-bomb"].hidden = true
 end
 
+
+
 -- Update Technologies which depend on optionally disabled technologies
+
 if not data.raw.technology["distractor"].hidden then
 	if data.raw.technology["laser"].hidden then
 		RemovePrerequistesFromTechnology(data.raw.technology["distractor"], "laser")
@@ -162,9 +165,11 @@ end
 
 if not data.raw.technology["personal-laser-defense-equipment"].hidden then
 	if data.raw.technology["laser"].hidden then
-		RemovePrerequistesFromTechnology(data.raw.technology["personal-laser-defense-equipment"], "laser")
+		RemovePrerequistesFromTechnology(data.raw.technology["personal-laser-defense-equipment"], "laser-turret")
 	end
 end
+
+
 
 -- Update recipes for items which depend on a disabled ingredient
 
