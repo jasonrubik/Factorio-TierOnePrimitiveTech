@@ -1,8 +1,24 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.6
+Date: 19 April 2023
+  Features:
+    - Implemented more Settings UI logic to allow for in-game customization of modpack behavior
+  Changes:
+    - Artillery Tech can now be toggled ON in settings. Default is OFF.
+    - Atomic Bomb Tech can now be toggled ON in settings. Default is OFF.
+    - Coal Liquefaction Tech can now be toggled ON in settings. Default is OFF.
+    - Combat Robots Tech can now be toggled ON in settings. Default is OFF.
+    - Solar Energy Tech can now be toggled ON in settings. Default is OFF.
+    - Laser Turrets Tech can now be toggled ON in settings. Default is OFF.
+    - Rocket Launcher Tech can now be toggled ON in settings. Default is OFF.
+    - Construction Robots Tech can now be toggled OFF in settings. Default is ON.
+    - Modular Armor Tech can now be toggled OFF in settings. Default is ON.
+    - Spidertron Tech can now be toggled OFF in settings. Default is ON.
+---------------------------------------------------------------------------------------------------
 Version: 0.0.5
 Date: 19 April 2023
   Features:
-    - Implemented Settings UI logic to allow for in-game customization of modpack behavior
+    - Implemented some minor Settings UI logic to allow for in-game customization of modpack behavior
   Changes:
     - Long-Handed Inserter recipe can now be toggled OFF in settings. Default is ON.
 ---------------------------------------------------------------------------------------------------
