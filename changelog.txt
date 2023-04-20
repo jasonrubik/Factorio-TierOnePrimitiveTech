@@ -1,4 +1,18 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.7
+Date: 20 April 2023
+  Features:
+    - Added Settings to handle worlds with less wood.
+  Minor Changes:
+    - Removed Long-Handed Inserter as an Effect from Automation Technology depending on the settings.
+  To-Do:
+    - Add optional settings for worlds with low wood quantity. Small Electric Pole and Iron Chests recipes to be updated.
+    - Prevent placing of prohibited entities such as solar panels and accumulator via a setting
+    - Limit Assembling Machine 2 to only allow recipes that require a fluid input
+    - Hide all laser and energy weapon bonus technologies
+    - Hide recipes from planner and chest filter UI
+    - Hide stack inserter effect from Inserter Capacity Bonus technology
+---------------------------------------------------------------------------------------------------
 Version: 0.0.6
 Date: 19 April 2023
   Features:

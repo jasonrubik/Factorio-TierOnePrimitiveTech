@@ -84,6 +84,7 @@ RemoveRecipeEffectFromTechnology(data.raw.technology["steel-processing"], "steel
 
 if not settings.startup["TOPT-AllowLongHandedInserter"].value then
 	data.raw.recipe["long-handed-inserter"].hidden = true
+	RemoveRecipeEffectFromTechnology(data.raw.technology["automation"], "long-handed-inserter")
 end
 
 if not settings.startup["TOPT-AllowIronChestDefaultRecipe"].value then
@@ -152,7 +153,18 @@ if not settings.startup["TOPT-AllowAtomicBombs"].value then
 	data.raw.technology["atomic-bomb"].hidden = true
 end
 
+-- Update Technologies which depend on optionally disabled technologies
+if not data.raw.technology["distractor"].hidden then
+	if data.raw.technology["laser"].hidden then
+		RemovePrerequistesFromTechnology(data.raw.technology["distractor"], "laser")
+	end
+end
 
+if not data.raw.technology["personal-laser-defense-equipment"].hidden then
+	if data.raw.technology["laser"].hidden then
+		RemovePrerequistesFromTechnology(data.raw.technology["personal-laser-defense-equipment"], "laser")
+	end
+end
 
 -- Update recipes for items which depend on a disabled ingredient
 
@@ -178,7 +190,5 @@ data.raw.recipe["logistic-chest-passive-provider"].ingredients =
 
 -- data.raw.item["fast-inserter"].flags = { "hidden" } 
 -- data.raw.item["stack-inserter"].flags = { "hidden" } 
-
-
 
 
