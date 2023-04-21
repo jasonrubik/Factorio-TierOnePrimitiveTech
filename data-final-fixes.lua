@@ -71,13 +71,11 @@ RemovePrerequistesFromTechnology(data.raw.technology["inserter-capacity-bonus-1"
 -- Hide recipes from non-disabled techs.
 
 
-data.raw.recipe["speed-module-2"].hidden = true
 data.raw.recipe["speed-module-3"].hidden = true
 data.raw.recipe["productivity-module-2"].hidden = true
 data.raw.recipe["productivity-module-3"].hidden = true
 data.raw.recipe["steel-chest"].hidden = true
 
-RemoveRecipeEffectFromTechnology(data.raw.technology["speed-module-2"], "speed-module-2")
 RemoveRecipeEffectFromTechnology(data.raw.technology["speed-module-3"], "speed-module-3")
 RemoveRecipeEffectFromTechnology(data.raw.technology["productivity-module-2"], "productivity-module-2")
 RemoveRecipeEffectFromTechnology(data.raw.technology["productivity-module-3"], "productivity-module-3")
@@ -90,6 +88,7 @@ RemoveRecipeEffectFromTechnology(data.raw.technology["steel-processing"], "steel
 if not settings.startup["TOPT-AllowLongHandedInserter"].value then
 	data.raw.recipe["long-handed-inserter"].hidden = true
 	RemoveRecipeEffectFromTechnology(data.raw.technology["automation"], "long-handed-inserter")
+	data.raw.inserter["long-handed-inserter"].flags = { "hidden" }
 end
 
 if settings.startup["TOPT-UpdateSmallElectricPoleRecipe"].value then
@@ -161,6 +160,9 @@ if not settings.startup["TOPT-AllowModularArmor"].value then
 	data.raw.recipe["personal-laser-defense-equipment"].hidden = true
 	data.raw.recipe["personal-roboport-equipment"].hidden = true
 	data.raw.recipe["personal-roboport-mk2-equipment"].hidden = true
+	
+	RemoveRecipeEffectFromTechnology(data.raw.technology["speed-module-2"], "speed-module-2")
+	data.raw.recipe["speed-module-2"].hidden = true
 end
 
 if not settings.startup["TOPT-AllowCombatRobots"].value then
@@ -250,13 +252,49 @@ end
 
 
 
---RemoveIngredientFromRecipe(data.raw.recipe["logistic-chest-storage"], "steel-chest")
---RemoveIngredientFromRecipe(data.raw.recipe["logistic-chest-passive-provider"], "steel-chest")
+-- Hide items from planner UI
 
+data.raw.assembling-machine["assembling-machine-3"].flags = { "hidden" }
+data.raw.assembling-machine["centrifuge"].flags = { "hidden" }
 
--- Hide items from planner UI  -- this generated an error at runtime : 
+data.raw.beacon["beacon"].flags = { "hidden" } 
+
+data.raw.boiler["heat-exchanger"].flags = { "hidden" } 
+
+data.raw.container["steel-chest"].flags = { "hidden" } 
+
+data.raw.furnace["steel-furnace"].flags = { "hidden" } 
+data.raw.furnace["electric-furnace"].flags = { "hidden" } 
+
+data.raw.generator["steam-turbine"].flags = { "hidden" }
+ 
+data.raw.heat-pipe["heat-pipe"].flags = { "hidden" } 
 
 data.raw.inserter["fast-inserter"].flags = { "hidden" } 
-data.raw.inserter["stack-inserter"].flags = { "hidden" } 
+data.raw.inserter["filter-inserter"].flags = { "hidden" } 
+data.raw.inserter["stack-inserter"].flags = { "hidden" }
+data.raw.inserter["stack-filter-inserter"].flags = { "hidden" }
 
+data.raw.logistic-container["logistic-chest-requester"].flags = { "hidden" } 
+data.raw.logistic-container["logistic-chest-active-provider"].flags = { "hidden" } 
+data.raw.logistic-container["logistic-chest-buffer"].flags = { "hidden" } 
 
+data.raw.logistic-robot["logistic-robot"].flags = { "hidden" } 
+
+data.raw.module["effectivity-module"].flags = { "hidden" } 
+data.raw.module["effectivity-module-2"].flags = { "hidden" } 
+data.raw.module["effectivity-module-3"].flags = { "hidden" } 
+data.raw.module["productivity-module"].flags = { "hidden" } 
+data.raw.module["productivity-module-2"].flags = { "hidden" }
+data.raw.module["productivity-module-3"].flags = { "hidden" }
+data.raw.module["speed-module"].flags = { "hidden" } 
+data.raw.module["speed-module-2"].flags = { "hidden" } 
+data.raw.module["speed-module-3"].flags = { "hidden" } 
+
+data.raw.reactor["nuclear-reactor"].flags = { "hidden" }
+ 
+data.raw.splitter["fast-splitter"].flags = { "hidden" } 
+data.raw.splitter["express-splitter"].flags = { "hidden" } 
+
+data.raw.underground-belt["fast-underground-belt"].flags = { "hidden" } 
+data.raw.underground-belt["express-underground-belt"].flags = { "hidden" } 
