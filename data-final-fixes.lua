@@ -70,12 +70,17 @@ RemovePrerequistesFromTechnology(data.raw.technology["inserter-capacity-bonus-1"
 
 -- Hide recipes from non-disabled techs.
 
-data.raw.recipe["productivity-module-3"].hidden = true
+
+data.raw.recipe["speed-module-2"].hidden = true
 data.raw.recipe["speed-module-3"].hidden = true
+data.raw.recipe["productivity-module-2"].hidden = true
+data.raw.recipe["productivity-module-3"].hidden = true
 data.raw.recipe["steel-chest"].hidden = true
 
-RemoveRecipeEffectFromTechnology(data.raw.technology["productivity-module-3"], "productivity-module-3")
+RemoveRecipeEffectFromTechnology(data.raw.technology["speed-module-2"], "speed-module-2")
 RemoveRecipeEffectFromTechnology(data.raw.technology["speed-module-3"], "speed-module-3")
+RemoveRecipeEffectFromTechnology(data.raw.technology["productivity-module-2"], "productivity-module-2")
+RemoveRecipeEffectFromTechnology(data.raw.technology["productivity-module-3"], "productivity-module-3")
 RemoveRecipeEffectFromTechnology(data.raw.technology["steel-processing"], "steel-chest")
 
 

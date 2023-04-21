@@ -8,6 +8,7 @@ Date: 20 April 2023
     - Added Settings logic to remove already researched recipes from Technologies which become re-enabled via settings at a later time.
     - Passive Provider Chest and Storage Chest recipes now depend on the "Allow Iron Chest" setting
     - Tried to hide fast and stack inserters from planner UI via flags on line 254 of data-final-fixes.lua
+    - Removed Speed Module 2 and Prod Module 2.
   Fixes:
     - Removed Long-Handed Inserter as an Effect from Automation Technology depending on the settings.
     - Removed Laser Tech prerequisite from Distractor Capsule Tech if "Allow Combat Robots" is ON and "Allow Laser Turrets" is OFF.
@@ -15,6 +16,7 @@ Date: 20 April 2023
   To-Do:
     - Prevent placing of prohibited entities such as solar panels and accumulator via a setting
     - Limit Assembling Machine 2 to only allow recipes that require a fluid input
+    - Need to fix Speed Module 2 requirements for Power Armor MK2
     - Hide all laser and energy weapon bonus technologies
     - Hide recipes from planner and chest filter UI
     - Hide stack inserter effect from Inserter Capacity Bonus technology
