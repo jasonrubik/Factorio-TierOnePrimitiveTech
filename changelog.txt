@@ -10,7 +10,6 @@ Date: 20 April 2023
     - Removed Laser Tech prerequisite from Distractor Capsule Tech if "Allow Combat Robots" is ON and "Allow Laser Turrets" is OFF.
     - Removed Laser-Turret Tech prerequisite from Personal Laser Defense Tech if "Allow Modular Armor" is ON and "Allow Laser Turrets" is OFF.
   To-Do:
-    - Add optional settings for worlds with low wood quantity. Small Electric Pole and Iron Chests recipes to be updated.
     - Prevent placing of prohibited entities such as solar panels and accumulator via a setting
     - Limit Assembling Machine 2 to only allow recipes that require a fluid input
     - Hide all laser and energy weapon bonus technologies
