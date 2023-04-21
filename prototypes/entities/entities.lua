@@ -243,4 +243,4 @@ data:extend(
     },
     energy_usage = "150kW",
   }
-}
+})
