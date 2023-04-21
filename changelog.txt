@@ -4,7 +4,7 @@ Date: 21 April 2023
   Features:
     - Added fluid input for Assembline Machine 1.
     - Removed Module slots from Assembling Machine 2.
-	- Restricted Assembling Machine 2 to only recipes with fluids.
+    - Restricted Assembling Machine 2 to only recipes with fluids.
   Minor Changes:
     - Hid more recipes from the Planner UI
   Fixes:
