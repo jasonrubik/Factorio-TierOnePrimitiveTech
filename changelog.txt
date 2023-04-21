@@ -4,7 +4,7 @@ Date: 20 April 2023
   Features:
     - Added Settings to handle worlds with less wood.
   Minor Changes:
-    - Small Electric Pole recipe can now be changed via Settings to allow for Iron Sticks instead of Wood on "tree-poor" worlds.
+    - Small Electric Pole recipe can now be changed via Settings to allow for Iron Sticks instead of Wood on "tree-poor" desert worlds.
   Fixes:
     - Removed Long-Handed Inserter as an Effect from Automation Technology depending on the settings.
     - Removed Laser Tech prerequisite from Distractor Capsule Tech if "Allow Combat Robots" is ON and "Allow Laser Turrets" is OFF.
