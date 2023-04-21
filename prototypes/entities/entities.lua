@@ -167,7 +167,6 @@ data:extend(
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     damaged_trigger_effect = hit_effects.entity(),
     fast_replaceable_group = "assembling-machine",
-    next_upgrade = "assembling-machine-3",
     animation =
     {
       layers =

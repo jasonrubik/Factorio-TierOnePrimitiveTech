@@ -254,8 +254,8 @@ end
 
 -- Hide items from planner UI
 
-data.raw.assembling-machine["assembling-machine-3"].flags = { "hidden" }
-data.raw.assembling-machine["centrifuge"].flags = { "hidden" }
+data.raw.item["assembling-machine-3"].flags = { "hidden" }
+data.raw.item["centrifuge"].flags = { "hidden" }
 
 data.raw.beacon["beacon"].flags = { "hidden" } 
 
@@ -268,18 +268,18 @@ data.raw.furnace["electric-furnace"].flags = { "hidden" }
 
 data.raw.generator["steam-turbine"].flags = { "hidden" }
  
-data.raw.heat-pipe["heat-pipe"].flags = { "hidden" } 
+data.raw.item["heat-pipe"].flags = { "hidden" } 
 
 data.raw.inserter["fast-inserter"].flags = { "hidden" } 
 data.raw.inserter["filter-inserter"].flags = { "hidden" } 
 data.raw.inserter["stack-inserter"].flags = { "hidden" }
 data.raw.inserter["stack-filter-inserter"].flags = { "hidden" }
 
-data.raw.logistic-container["logistic-chest-requester"].flags = { "hidden" } 
-data.raw.logistic-container["logistic-chest-active-provider"].flags = { "hidden" } 
-data.raw.logistic-container["logistic-chest-buffer"].flags = { "hidden" } 
+data.raw.item["logistic-chest-requester"].flags = { "hidden" } 
+data.raw.item["logistic-chest-active-provider"].flags = { "hidden" } 
+data.raw.item["logistic-chest-buffer"].flags = { "hidden" } 
 
-data.raw.logistic-robot["logistic-robot"].flags = { "hidden" } 
+data.raw.item["logistic-robot"].flags = { "hidden" } 
 
 data.raw.module["effectivity-module"].flags = { "hidden" } 
 data.raw.module["effectivity-module-2"].flags = { "hidden" } 
@@ -296,5 +296,5 @@ data.raw.reactor["nuclear-reactor"].flags = { "hidden" }
 data.raw.splitter["fast-splitter"].flags = { "hidden" } 
 data.raw.splitter["express-splitter"].flags = { "hidden" } 
 
-data.raw.underground-belt["fast-underground-belt"].flags = { "hidden" } 
-data.raw.underground-belt["express-underground-belt"].flags = { "hidden" } 
+data.raw.item["fast-underground-belt"].flags = { "hidden" } 
+data.raw.item["express-underground-belt"].flags = { "hidden" } 
