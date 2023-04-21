@@ -254,7 +254,7 @@ end
 
 -- Hide items from planner UI
 
-data.raw.item["assembling-machine-3"].flags = { "hidden" }
+-- data.raw.item["assembling-machine-3"].flags = { "hidden" }
 data.raw.item["centrifuge"].flags = { "hidden" }
 
 data.raw.beacon["beacon"].flags = { "hidden" } 
@@ -270,7 +270,7 @@ data.raw.generator["steam-turbine"].flags = { "hidden" }
  
 data.raw.item["heat-pipe"].flags = { "hidden" } 
 
-data.raw.inserter["fast-inserter"].flags = { "hidden" } 
+--data.raw.inserter["fast-inserter"].flags = { "hidden" } 
 data.raw.inserter["filter-inserter"].flags = { "hidden" } 
 data.raw.inserter["stack-inserter"].flags = { "hidden" }
 data.raw.inserter["stack-filter-inserter"].flags = { "hidden" }
@@ -293,8 +293,11 @@ data.raw.module["speed-module-3"].flags = { "hidden" }
 
 data.raw.reactor["nuclear-reactor"].flags = { "hidden" }
  
-data.raw.splitter["fast-splitter"].flags = { "hidden" } 
-data.raw.splitter["express-splitter"].flags = { "hidden" } 
+--data.raw.splitter["fast-splitter"].flags = { "hidden" } 
+--data.raw.splitter["express-splitter"].flags = { "hidden" } 
 
-data.raw.item["fast-underground-belt"].flags = { "hidden" } 
-data.raw.item["express-underground-belt"].flags = { "hidden" } 
+--data.raw.item["fast-transport-belt"].flags = { "hidden" } 
+--data.raw.item["express-transport-belt"].flags = { "hidden" } 
+
+--data.raw.item["fast-underground-belt"].flags = { "hidden" } 
+--data.raw.item["express-underground-belt"].flags = { "hidden" } 
