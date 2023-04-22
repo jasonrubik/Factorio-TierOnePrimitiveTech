@@ -179,7 +179,12 @@ if not settings.startup["TOPT-AllowLaserTurrets"].value then
 	data.raw.technology["laser-turret"].hidden = true
 	data.raw.technology["laser-shooting-speed-1"].hidden = true
 	data.raw.technology["energy-weapons-damage-1"].hidden = true
+	data.raw.technology["discharge-defense-equipment"].hidden = true
+	data.raw.technology["personal-laser-defense-equipment"].hidden = true
 	data.raw.recipe["laser-turret"].hidden = true
+	data.raw.recipe["discharge-defense-equipment"].hidden = true
+	data.raw.recipe["discharge-defense-remote"].hidden = true
+	data.raw.recipe["personal-laser-defense-equipment"].hidden = true
 end
 
 if not settings.startup["TOPT-AllowSpidertron"].value then
