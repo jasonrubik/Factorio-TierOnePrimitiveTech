@@ -37,14 +37,14 @@ data:extend({
 	{
 		type = "bool-setting",
 		name = "TOPT-AllowSolarEnergyProduction",
-		setting_type = "startup",
+		setting_type = "runtime-global",
 		default_value = false,
 		order = "f",
 	},
 	{
 		type = "bool-setting",
 		name = "TOPT-AllowAccumulatorEnergyStorage",
-		setting_type = "startup",
+		setting_type = "runtime-global",
 		default_value = false,
 		order = "g",
 	},
@@ -96,5 +96,12 @@ data:extend({
 		setting_type = "startup",
 		default_value = false,
 		order = "n",
+	},
+	{
+		type = "bool-setting",
+		name = "TOPT-AllowFluidsInAssemblingMachine1",
+		setting_type = "startup",
+		default_value = false,
+		order = "o",
 	},
 })

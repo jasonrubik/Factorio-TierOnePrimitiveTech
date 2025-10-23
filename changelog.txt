@@ -1,4 +1,35 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.9
+Date: 22 October 2025
+  Features:
+    - Prevent electricity production and storage from solar panels and accumulators via a setting
+  Minor Changes:
+    - Converted Long Handed Inserter setting to a realtime toggle that removes these from player inventory when toggled OFF
+    - Restored the Electric Furnace item as it is required for Production Science Packs, but disallow placement
+  Fixes:
+    - Fixed fluid recipe restrictions for Assembling Machine 2
+    - Fixed setting toggle for fluid input on Assembling Machine 1
+    - Hide stack inserter effect from Inserter Capacity Bonus technology
+  To-Do:
+    - Hide all laser and energy weapon bonus technologies
+    - Hide recipes from planner and chest filter UI
+---------------------------------------------------------------------------------------------------
+Version: 0.0.8
+Date: 21 April 2023
+  Features:
+    - Added fluid input for Assembline Machine 1.
+    - Removed Module slots from Assembling Machine 2.
+    - Restricted Assembling Machine 2 to only recipes with fluids.
+  Minor Changes:
+    - Hid more recipes from the Planner UI
+  Fixes:
+    - Added Speed Module 2 Tech and recipe to the "Allow Modular Armor" setting
+  To-Do:
+    - Prevent placing of prohibited entities such as solar panels and accumulator via a setting
+    - Hide all laser and energy weapon bonus technologies
+    - Hide recipes from planner and chest filter UI
+    - Hide stack inserter effect from Inserter Capacity Bonus technology
+---------------------------------------------------------------------------------------------------
 Version: 0.0.7
 Date: 20 April 2023
   Features:
