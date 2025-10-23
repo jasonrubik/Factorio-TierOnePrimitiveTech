@@ -7,7 +7,7 @@ function RemoveRecipeEffectFromTechnology(technology, recipe)
 	end
 end
 
-function RemovePrerequistesFromTechnology(technology, prerequisiteToRemove)
+function RemovePrerequisitesFromTechnology(technology, prerequisiteToRemove)
 	for i, prerequisite in ipairs(technology.prerequisites) do
 		if prerequisite == prerequisiteToRemove then
 			table.remove(technology.prerequisites, i)
@@ -16,7 +16,7 @@ function RemovePrerequistesFromTechnology(technology, prerequisiteToRemove)
 	end
 end
 
-function AddPrerequistesToTechnology(technology, prerequisiteToAdd)
+function AddPrerequisitesToTechnology(technology, prerequisiteToAdd)
 	table.insert(technology.prerequisites, prerequisiteToAdd)
 end
 
@@ -34,7 +34,6 @@ end
 -- Disable/hide these technologies ALWAYS
 
 data.raw.technology["advanced-material-processing"].hidden = true
-data.raw.technology["advanced-material-processing-2"].hidden = true
 data.raw.technology["automation-3"].hidden = true
 data.raw.technology["effect-transmission"].hidden = true
 data.raw.technology["electric-energy-distribution-1"].hidden = true
@@ -55,21 +54,19 @@ data.raw.technology["kovarex-enrichment-process"].hidden = true
 
 -- Non-Disabled techs which depend on a disabled tech
 
-RemovePrerequistesFromTechnology(data.raw.technology["automobilism"], "logistics-2")
-RemovePrerequistesFromTechnology(data.raw.technology["railway"], "logistics-2")
-RemovePrerequistesFromTechnology(data.raw.technology["concrete"], "advanced-material-processing")
-RemovePrerequistesFromTechnology(data.raw.technology["electric-energy-accumulators"], "electric-energy-distribution-1")
-RemovePrerequistesFromTechnology(data.raw.technology["low-density-structure"], "advanced-material-processing")
-RemovePrerequistesFromTechnology(data.raw.technology["production-science-pack"], "advanced-material-processing-2")
+RemovePrerequisitesFromTechnology(data.raw.technology["automobilism"], "logistics-2")
+RemovePrerequisitesFromTechnology(data.raw.technology["railway"], "logistics-2")
+RemovePrerequisitesFromTechnology(data.raw.technology["concrete"], "advanced-material-processing")
+RemovePrerequisitesFromTechnology(data.raw.technology["electric-energy-accumulators"], "electric-energy-distribution-1")
+RemovePrerequisitesFromTechnology(data.raw.technology["low-density-structure"], "advanced-material-processing")
 
-RemovePrerequistesFromTechnology(data.raw.technology["inserter-capacity-bonus-1"], "logistics-2")
-RemovePrerequistesFromTechnology(data.raw.technology["inserter-capacity-bonus-1"], "fast-inserter")
-RemovePrerequistesFromTechnology(data.raw.technology["inserter-capacity-bonus-1"], "stack-inserter")
+RemovePrerequisitesFromTechnology(data.raw.technology["inserter-capacity-bonus-1"], "logistics-2")
+RemovePrerequisitesFromTechnology(data.raw.technology["inserter-capacity-bonus-1"], "fast-inserter")
+RemovePrerequisitesFromTechnology(data.raw.technology["inserter-capacity-bonus-1"], "stack-inserter")
 
 
 
 -- Hide recipes from non-disabled techs.
-
 
 data.raw.recipe["speed-module-3"].hidden = true
 data.raw.recipe["productivity-module-2"].hidden = true
@@ -80,6 +77,8 @@ RemoveRecipeEffectFromTechnology(data.raw.technology["speed-module-3"], "speed-m
 RemoveRecipeEffectFromTechnology(data.raw.technology["productivity-module-2"], "productivity-module-2")
 RemoveRecipeEffectFromTechnology(data.raw.technology["productivity-module-3"], "productivity-module-3")
 RemoveRecipeEffectFromTechnology(data.raw.technology["steel-processing"], "steel-chest")
+
+RemoveRecipeEffectFromTechnology(data.raw.technology["inserter-capacity-bonus-1"], "stack-inserter")
 
 
 
@@ -213,13 +212,13 @@ end
 
 if not data.raw.technology["distractor"].hidden then
 	if data.raw.technology["laser"].hidden then
-		RemovePrerequistesFromTechnology(data.raw.technology["distractor"], "laser")
+		RemovePrerequisitesFromTechnology(data.raw.technology["distractor"], "laser")
 	end
 end
 
 if not data.raw.technology["personal-laser-defense-equipment"].hidden then
 	if data.raw.technology["laser"].hidden then
-		RemovePrerequistesFromTechnology(data.raw.technology["personal-laser-defense-equipment"], "laser-turret")
+		RemovePrerequisitesFromTechnology(data.raw.technology["personal-laser-defense-equipment"], "laser-turret")
 	end
 end
 
@@ -257,25 +256,93 @@ end
 
 
 
+-- Disable any placed electric furnaces but keep the item & recipe intact (For purple science)
+
+local furnace_dummy = table.deepcopy(data.raw["furnace"]["electric-furnace"])
+furnace_dummy.name = "electric-furnace-dummy"
+furnace_dummy.energy_source = {type = "void"}
+furnace_dummy.crafting_categories = {"smelting"}
+furnace_dummy.minable = {mining_time = 0.5, result = "electric-furnace"}
+furnace_dummy.localised_name = {"entity-name.electric-furnace"}
+data:extend({furnace_dummy})
+
+if data.raw.item["electric-furnace"] then
+    data.raw.item["electric-furnace"].place_result = "electric-furnace-dummy"
+end
+
+
+	
+-- Define Dummy entities for Solar Panels and Accumulators so that they can be toggled via settings (in control.lua)
+
+-- Solar panel dummy
+local solar_dummy = table.deepcopy(data.raw["solar-panel"]["solar-panel"])
+solar_dummy.name = "solar-panel-dummy"
+solar_dummy.production = "0.0001kW"
+solar_dummy.minable = {mining_time = 0.5, result = "solar-panel"}
+solar_dummy.localised_name = {"entity-name.solar-panel"}
+data:extend({solar_dummy})
+
+-- Accumulator dummy
+local accumulator_dummy = table.deepcopy(data.raw["accumulator"]["accumulator"])
+accumulator_dummy.name = "accumulator-dummy"
+accumulator_dummy.energy_source = {
+    type = "electric",
+    buffer_capacity = "0.0001kJ",
+    usage_priority = "tertiary",
+    input_flow_limit = "0kW",
+    output_flow_limit = "0kW"
+}
+accumulator_dummy.minable = {mining_time = 0.5, result = "accumulator"}
+accumulator_dummy.localised_name = {"entity-name.accumulator"}
+data:extend({accumulator_dummy})
+
+
+
+-- Toggle fluid input on any newly placed Assembling Machine 1 based on setting
+
+if settings.startup["TOPT-AllowFluidsInAssemblingMachine1"].value then
+    data.raw["assembling-machine"]["assembling-machine-1"].fluid_boxes =
+        table.deepcopy(data.raw["assembling-machine"]["assembling-machine-2"].fluid_boxes)
+else
+    data.raw["assembling-machine"]["assembling-machine-1"].fluid_boxes = nil
+end
+
+
+
+-- Restrict Assembling Machine 2 to only recipes with fluid ingredients
+
+local fluid_categories = {}
+for name, recipe in pairs(data.raw.recipe) do
+    if recipe.ingredients then
+        for _, ingredient in pairs(recipe.ingredients) do
+            if ingredient.type == "fluid" then
+                fluid_categories[recipe.category or "crafting"] = true
+                break
+            end
+        end
+    end
+end
+
+local allowed_categories = {}
+for cat, _ in pairs(fluid_categories) do
+    table.insert(allowed_categories, cat)
+end
+
+data.raw["assembling-machine"]["assembling-machine-2"].crafting_categories = allowed_categories
+
+
+
 -- Hide items from planner UI
 
--- data.raw.item["assembling-machine-3"].flags = { "hidden" }
 data.raw.item["centrifuge"].flags = { "hidden" }
-
 data.raw.beacon["beacon"].flags = { "hidden" } 
-
 data.raw.boiler["heat-exchanger"].flags = { "hidden" } 
-
 data.raw.container["steel-chest"].flags = { "hidden" } 
-
 data.raw.furnace["steel-furnace"].flags = { "hidden" } 
 data.raw.furnace["electric-furnace"].flags = { "hidden" } 
-
 data.raw.generator["steam-turbine"].flags = { "hidden" }
- 
 data.raw.item["heat-pipe"].flags = { "hidden" } 
 
---data.raw.inserter["fast-inserter"].flags = { "hidden" } 
 data.raw.inserter["filter-inserter"].flags = { "hidden" } 
 data.raw.inserter["stack-inserter"].flags = { "hidden" }
 data.raw.inserter["stack-filter-inserter"].flags = { "hidden" }
